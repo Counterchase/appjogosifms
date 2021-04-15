@@ -26,10 +26,20 @@ public class Escola implements Serializable{
 	
 	public Escola() { }
 	
-	public Escola(Long id, String nome) {
+	
+
+	public Escola(Long id, String nome, String endereco, String site, String email, String diretor, String telefone) {
+		super();
 		this.id = id;
 		this.nome = nome;
+		this.endereco = endereco;
+		this.site = site;
+		this.email = email;
+		this.diretor = diretor;
+		this.telefone = telefone;
 	}
+
+
 
 	public Long getId() {
 		return id;
