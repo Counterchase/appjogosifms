@@ -10,7 +10,7 @@ public class ModalidadeDTO implements Serializable{
 	private Long id;
 	private String descicao;
 	
-	private void ModalicadeDTO() {
+	private void ModalidadeDTO() {
 
 	}
 
