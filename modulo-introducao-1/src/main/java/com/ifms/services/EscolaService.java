@@ -45,6 +45,11 @@ public class EscolaService {
 	public EscolaDTO insert(EscolaDTO dto) {
 		Escola entity = new Escola();
 		entity.setNome(dto.getNome());
+		entity.setEndereco(dto.getEndereco());
+		entity.setSite(dto.getSite());
+		entity.setEmail(dto.getEmail());
+		entity.setDiretor(dto.getDiretor());
+		entity.setTelefone(dto.getTelefone());
 		entity = repository.save(entity);
 		return new EscolaDTO(entity);
 	}
@@ -55,6 +60,11 @@ public class EscolaService {
 		try {
 			Escola entity = repository.getOne(id);
 			entity.setNome(dto.getNome());
+			entity.setEndereco(dto.getEndereco());
+			entity.setSite(dto.getSite());
+			entity.setEmail(dto.getEmail());
+			entity.setDiretor(dto.getDiretor());
+			entity.setTelefone(dto.getTelefone());
 			entity = repository.save(entity);
 			return new EscolaDTO(entity);
 
