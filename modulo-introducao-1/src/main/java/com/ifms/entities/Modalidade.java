@@ -1,11 +1,15 @@
 package com.ifms.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +21,13 @@ public class Modalidade implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String descricao;
+	
+	@OneToMany(mappedBy = "modalidade")
+	private List<Equipe> equipe;
+	
+	@ManyToMany
+	@JoinColumn(name = "id_jogo_fk")
+	private List<Jogo> jogo;
 	
 	public Modalidade() { }
 	
